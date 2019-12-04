@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hdr_lib version="1.0" >
+    <panel_color_mode>    DCIP3       </panel_color_mode>     <!-- string sRGB or DCIP3                                        -->
+    <panel_max_luminance> 530   </panel_max_luminance>  <!-- int panel max luminance at white point (nits) 425.71              -->
+    <panel_min_luminance> 0.03     </panel_min_luminance>  <!-- float panel min luminance, black leakage (nits)             -->
+	<nominal_peak_luminance> 1000.0 </nominal_peak_luminance><!-- used by HLG playback             -->
+	<output_gamma_space>          
+        <space> 2p2 </space><!-- string linear, 2p2, sRGB, BT709 or custom                     -->
+        <val> 2.2   </val> <!-- the gamma value is picked up here when it's custom mode-->
+    </output_gamma_space>
+    <panel_pcc>                                         <!-- spell this out explicitly to avoid confusion over order     -->
+        <r>
+            <c>   0.0 </c>           <!-- float constant component                                    -->
+            <r>   1.179807671365640000 </r>
+            <g>   -0.103259110711123000 </g>
+            <b>   -0.062614426830588100 </b>
+            <rr>  -0.102702758792792000 </rr>
+            <gg>  0.056248361093111800 </gg>
+            <bb>  0.075984719749222300 </bb>
+            <rg>  -0.018747823807785800 </rg>
+            <gb>  -0.004736845761168610 </gb>
+            <rb>  -0.043521445855746200  </rb>
+            <rgb> 0.022631257963101300 </rgb>
+        </r>
+        <g>
+            <c>   0.0 </c>           <!-- float constant component                                    -->
+            <r>   -0.068544316227102900 </r>
+            <g>   1.185220144207440000 </g>
+            <b>   -0.096926618061958200 </b>
+            <rr>  0.089747615380644700 </rr>
+            <gg>  -0.134263502010779000 </gg>
+            <bb>  0.098884471487841100 </bb>
+			<rg>  -0.046683570693156700 </rg>
+            <gb>  -0.036034412991536900 </gb>
+            <rb>  -0.027694539116876700 </rb>
+
+            <rgb> 0.036294728025487300  </rgb>
+        </g>
+        <b>
+            <c>   0.0 </c>           <!-- float constant component                                    -->
+            <r>   -0.035175437509587900 </r>
+            <g>   -0.013930756206150800 </g>
+            <b>   1.061587360842630000 </b>
+            <rr>  0.049420264232924000 </rr>
+            <gg>  0.023087068112825500 </gg>
+            <bb>  -0.031122597055068300  </bb>
+			<rg>  -0.012076698896893300 </rg>
+            <gb>  -0.022454271926684000 </gb>
+            <rb>  -0.042467426193678300 </rb>
+            <rgb> 0.022574363882052600 </rgb>
+        </b>   
+    </panel_pcc>
+    <tone_map_curve_control>
+        <t0>       0.005 </t0>         <!-- float (nits) intercept of first transition segment with panel min       -->
+        <intl>    125.0 </intl>       <!-- float (nits) intercept of first transition segment with linear segment  -->
+        <inth>   225.0 </inth>       <!-- float (nits) intercept of second transtion segment with linear segment  -->
+        <slope>    0.75 </slope>      <!-- float slope of linear segment                                           -->
+        <pivot>  1000.0 </pivot>      <!-- pivot point around which the linear segment is rotated to achieve slope -->
+        <sharp>    2.0 </sharp>      <!-- sharpness factor for second transition section                          -->
+    </tone_map_curve_control>
+    <bright>
+	    <enable> 0 </enable>
+        <tlower> 0.03</tlower>
+        <tupper> 400.0</tupper>
+        <sysGamma> 1.0</sysGamma>
+    </bright>
+    <sat>
+       <enable> 0 </enable>
+       <t1>   0.005 </t1>
+       <t2>   0.05  </t2>
+       <kmax>  1.30 </kmax>
+    </sat>
+    <upper>
+       <enableM> 0 </enableM> <!-- 0: not using curveKnobM, 1: yes -->
+       <fixedClip> 0 </fixedClip> <!-- enable signal -->
+       <clipLuma> 4000.0 </clipLuma>
+       <linearScale> 1</linearScale>
+       <fixedRatio> 0 </fixedRatio>
+       <scaleStart> 350.0 </scaleStart>
+       <ratio> 0.4 </ratio>
+    </upper>
+</hdr_lib>
